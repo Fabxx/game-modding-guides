@@ -25,7 +25,7 @@ open the tool and in the settings, setup the tool with the path to your game dir
   -apply the changes and save the pak, now you have the vanilla file to repalce.
   
   
- # REPLACING SFX 
+# REPLACING SFX 
  
   NOTE: you need to import the SFX from the pak file you need first.
   
