@@ -60,7 +60,9 @@ the mat binding must remain 2020
 then from 2017 models you have to export these textures, and import them into 2020 files
 
 `wheel d (or a, depends on the name applied), n, s` 
+
 `Steering wheel decal main file (should be d),` 
+
 `paint n, s,`  
 
 `paint s, d, c, n (check if in the files are available these letters, might differ)`  
@@ -104,7 +106,8 @@ then open that erp file in the tool, and export the carmodel.json file.
 
 Find these sections:
 
-```"Tyres": {
+```
+"Tyres": {
             "PkgObjectVersion": 0,
             "material": "stri eaid://f1_2019_classic_vehicle_package/shared/tyres/idf/c_05_tyres.emb",
             "tyre model": "stri eaid://f1_2019_classic_vehicle_package/shared/tyres/idf/c_05_tyres.idf?context=render",
@@ -117,7 +120,8 @@ Find these sections:
           "VehicleSpawnData": {
             "PkgObjectVersion": 0,
             "blob_shadow_decal": "stri eaid://f1_2019_classic_vehicle_package/shared/ao/materials/c_ferrari_76_blobshadowdecal.material"
-          }```
+          }
+```
         
       
 Now export the modern `carmodel.json` car file, and you have to ADD these sections after 
