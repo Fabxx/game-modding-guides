@@ -167,7 +167,8 @@ Export the carmodel.json package from modern car
 find this section:
 
 
-```"AudioF1Car": {
+```
+"AudioF1Car": {
             "PkgObjectVersion": 0,
             "bundleName": "stri classic_v10.bdl",
             "enable exhaust bundle stream": "bool True",
@@ -184,7 +185,8 @@ find this section:
             "rearwing_offsetY": "fp32 0.6",
             "rearwing_offsetZ": "fp32 -2.2",
             "switchName": "stri Sauber"
-          },```
+          },
+```
           
           
 replace bundleName string with the name of the bdl file located in "audio" folder of 
@@ -206,7 +208,8 @@ NOTE 2: If you changed the revs only but the engine is too weak still, paste thi
 the revs power spline as well (not actually this one, this is just an example 
 of what it looks in your xml)
 
-```<RevsPowerSpline numVertices="21">
+```
+<RevsPowerSpline numVertices="21">
       <SplineElement x="0" y="0" op="=" />
       <SplineElement x="130.718124" y="14816.3564453125" op="=" />
       <SplineElement x="209.439509" y="37402.24609375" op="=" />
@@ -228,13 +231,16 @@ of what it looks in your xml)
       <SplineElement x="1727.87596" y="540632.5" op="=" />
       <SplineElement x="1780.23584" y="540631.5" op="=" />
       <SplineElement x="1832.596" y="370035.90625" op="=" />
-    </RevsPowerSpline>```
+    </RevsPowerSpline>
+```
     
     
 -REVS ONLY PARAMETERS
-```<MaxLimiterRateFactor value="1" />
+```
+<MaxLimiterRateFactor value="1" />
 <IdleRotationRate value="523.598755" />
-<LimiterRotationRate value="1780.23584" />```
+<LimiterRotationRate value="1780.23584" />
+```
 
 `LimiterRotationRate`: max revs of the engine
 `IdleRotationRate`: min revs of the engine
@@ -253,7 +259,8 @@ scroll down until you find the camera attachments, here is an example of the
 
 each attachment has a `"Offset"` and `"Rotation"` vector coordinates
 
-```{
+```
+{
         "PkgObjectVersion": 0,
         "name": "stri camscargame$CameraAttachmentPointPodOffset",
         "overrides": {
@@ -270,7 +277,8 @@ each attachment has a `"Offset"` and `"Rotation"` vector coordinates
             "PkgObjectVersion": 0,
             "transform": "mat4 1,0,0,0;0,0.9961947,0.08715574,0;0,-0.08715574,0.9961947,0;0.14,0.66,0.01,1"
           }
-        },```
+        },
+```
         
    what you have to do here, is to obtain the classic car 
    `"Offset"` and `"Rotation"` values, and copy paste them in the modern car values.
@@ -288,12 +296,14 @@ into your `"incardriver"` game folder, alongside the "2020" folder.
 
 open the file `incardriver_f1.assetgroup` from 2020 folder and edit it like this:
 
-```<?xml version="1.0" encoding="utf-8"?>
+```
+<?xml version="1.0" encoding="utf-8"?>
 <!--This file was automatically generated-->
 <AssetGroup bigERP="true">
   <ERP>2020_asset_groups/animation_package/scenes/incardriver/2020/incardriver_f1.erp</ERP>
   <ERP>2020_asset_groups/animation_package/scenes/incardriver/1980/incardriver.erp</ERP> (added line)
-</AssetGroup>```
+</AssetGroup>
+```
 
 
 save, then open the `incardriver_f1.erp` file into the EGO tool, 
@@ -301,14 +311,16 @@ export the `incardriver.xml` file. Same thing for the `1980` incardriver file.
 
 each car has its animation programmed like this:
 
-```<scene name="classics_incar_driver_body_c_lotus_78">
+```
+<scene name="classics_incar_driver_body_c_lotus_78">
     <actor type="InCarDriverActor" id="InCarDriver">
       <part id="InCarDriver" culling="Bip01" cullingradius="3.0" overrideMeshIndex="0" mesh="eaid://character_package/condition_scene/idf/driver_body_male">
         <animset name="animations_driver_in_car/driver_steering_anims/idf/driver_in_car_1978_lotus" />
         <animset name="MACRO animset" />
       </part>
     </actor>
-  </scene>```
+  </scene>
+```
   
   
   the scene name is the name of the car you want, we need to change the animset name 
