@@ -1,4 +1,4 @@
-#SUIT LOCATION
+# SUIT LOCATION
 
 `2020_asset_groups/character_package/team_livery/`
 
@@ -14,14 +14,14 @@ replace these textures:
 
 `livery_d/n/s`
 
-#EXTRA STEP
+# EXTRA STEP
 
 to get rid of the extra logos on the gloves, export the texture `"glove_logo_d"` and make it transparent, reimport and save.
 
 
 NOTE: DO NOT REPLACE THE SUIT ON FOM01, CAUSES MIPMAP CONFLICTS IF YOU REPLACED THE HELMET FOR FOM01 AND MAKES ALL BLURRY.
 
-#REPLACABLE SUITS
+# REPLACABLE SUITS
 
 -> SCHUMACHER01
 
