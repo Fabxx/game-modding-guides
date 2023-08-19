@@ -46,14 +46,11 @@ open the tool and in the settings, setup the tool with the path to your game dir
   
   `01` is the number of the level
   
-  
   NOTE: you can also play the audio file while clicking on it to get a preview.
-  
-  
-  once you found your imported wav file you can export it.
-  
+  once you found your imported wav file you can export it  
   
 # OST notes
+``
 
     exported music file must be:
     
