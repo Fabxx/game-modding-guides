@@ -37,7 +37,8 @@ open the tool and in the settings, setup the tool with the path to your game dir
   
   path for SFX: `sound_samples > wavs > your_tree_of_sfx_imported`
   
-  the OST has in the file name the level name and level number, example with crash 1 and n.sanity beach.:
+  the OST has in the file name the level name and level number, example with crash 1 
+  and n.sanity beach:
   
   `CB101_NSanityBeach` in the name
   
@@ -53,8 +54,8 @@ open the tool and in the settings, setup the tool with the path to your game dir
   
   
 # OST notes
-  
-    the exported music file must be:
+
+    exported music file must be:
     
     -less than `2:52` minutes
     
