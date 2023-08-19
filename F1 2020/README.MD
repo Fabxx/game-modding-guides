@@ -16,7 +16,7 @@ then go to the car erp file in 2020_asset_groups/f1_2020_vehicle_package/teams/t
 
 modify the assetgroup file by adding two lines like this:
 
-```<?xml version="1.0" encoding="utf-8"?>
+`<?xml version="1.0" encoding="utf-8"?>
 <!--This file was automatically generated-->
 <AssetGroup bigERP="true">
   <!--common big erp-->
@@ -25,7 +25,7 @@ modify the assetgroup file by adding two lines like this:
   <!--specific big erp-->
   <ERP>2020_asset_groups/f1_2020_vehicle_package/teams/ferrari/wep/ferrari.erp</ERP>
   <ERP>2020_asset_groups/f1_201x_vehicle_package/teams/ferrari/wep/ferrari.erp</ERP> (added line)
-</AssetGroup>```
+</AssetGroup>`
 
 where "x" is the number of the year of the game files used (if you want classic cars or other modern cars, just change the path name
  on the two added lines.)
