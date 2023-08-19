@@ -50,8 +50,7 @@ open the tool and in the settings, setup the tool with the path to your game dir
   once you found your imported wav file you can export it  
   
 # OST notes
-``
-
+    
     exported music file must be:
     
     -less than `2:52` minutes
@@ -69,13 +68,17 @@ open the tool and in the settings, setup the tool with the path to your game dir
 
 	open that bank file in alchemist
 
-	dig up in the content sections, the sounds that can be changed are labeled as `"CSubSound"`
+	dig up in the content sections, the sounds that can be changed are labeled as 
+        `"CSubSound"`
 
-	then click on a audio reference, it will display hex values. Default volume for hex is `00 00 80 3F`
+	then click on a audio reference, it will display hex values. 
+	Default volume for hex is `00 00 80 3F`
 
-	you have a float value of that hex value, which is `1`. So change that number 1 into something higher.
+	you have a float value of that hex value, which is `1`. 
+	So change that number 1 into something higher.
 
-	Save the bank, import the vanilla bank in your pak file, then do "Replace" on the bank with your modded one
+	Save the bank, import the vanilla bank in your pak file, 
+	then do "Replace" on the bank with your modded one
 
 	save and test!
 	
@@ -83,7 +86,8 @@ open the tool and in the settings, setup the tool with the path to your game dir
 	
 # ADDITIONAL NOTES ON MP3 FORMAT
 
-	for OSTs and SFX, the mp3 encoder adds an empty second at the beggining, to get rid of that you need to use FMOD.
+	for OSTs and SFX, the mp3 encoder adds an empty second at the beggining, 
+	to get rid of that you need to use FMOD.
 	
 	-get the mp3, remove the blank part at the beginning and export as ogg
 	
