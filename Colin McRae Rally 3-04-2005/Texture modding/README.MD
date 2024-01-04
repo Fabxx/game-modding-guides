@@ -46,7 +46,9 @@ FocFaceDF.dds - main face with eyes open texture
 
 Select the texture that you want and go to `Actions > extract` to extract the single texture, or you can also extract all if you want. 
 
-Once extracted you can edit the texture in photoshop (with the same nvidia DDS plugin provided for CMR 2.0), then extract it with the same compression. I recommend using infraview to open the dds texture and check its details regarding the compression. 
+Once extracted you can edit the texture in paint.net, then extract it with the same compression. I recommend using infraview to open the dds texture and check its details regarding the compression.
+
+NOTE: GLass textures need BC3 DTX5 Compression
 
 After saving the edited texture you can import it again in iripper by right clicking the texture you want > click replace, select your texture and save the new BIG file, replace it and see the changes.
 
