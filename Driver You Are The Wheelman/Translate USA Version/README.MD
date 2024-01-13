@@ -48,6 +48,8 @@ NOTE: in some spaces you can add more chars, but only where two or more dots are
 
 The other menu text are in the same file, just search in the hex the corresponding chars you want to replace and you'll find them.
 
+like "Press any button to return to main menu" in the map is `50 72 65 73 73`
+
 
 # STR Modding: change audio language
 
