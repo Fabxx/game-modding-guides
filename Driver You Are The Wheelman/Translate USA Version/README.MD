@@ -1,6 +1,6 @@
 # Files to translate UI
 
-`FRONTEND.BIN` Contains menu text.
+`FRONTEND.BIN` Contains main menu text.
 
 NOTE: Strings must be the same lenght or shorter. If you type too many bytes for a string the game will crash! usually the delimiter in each string is a the last dot. 
 
@@ -14,7 +14,7 @@ if you need less chars, you can remove the remaining bytes with spaces.
 
 `MCCARD.BIN` Contains "Memory Card" save game strings
 
-`DATA/LANG.ENG` Contains main menu and some in game text strings.
+`DATA/LANG.ENG` Contains reused menu strings. Might not affect anything but it's best to change them, especially the lowercase ones
 
 NOTE: LANG.ENG can accept a bit longer strings, but not too much or you won't see it in game!
 
