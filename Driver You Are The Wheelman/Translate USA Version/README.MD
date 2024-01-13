@@ -20,6 +20,8 @@ NOTE: LANG.ENG can accept a bit longer strings, but not too much or you won't se
 
 `NFMV` Video cutscenes with the audio. PAL version has `FMV` folder.
 
+`SLUS_008.42` Contains Damage, Felony and pause menu strings.
+
 
 # Hex Editing BIN files
 
@@ -28,6 +30,16 @@ you'll need a hex editor. The data is not encrypted so it's easy to see what str
 Example:
 
 ![image](image.jpg)
+
+FOr damage, felony you can find these two addresses and replace them:
+
+![image](felony and damage.jpg)
+
+![image](damage.jpg)
+
+NOTE: Felony can have one extra char, as long you don't go over "Damage"
+
+The other menu text are in the same file, just search in the hex the corresponding chars you want to replace and you'll find them.
 
 
 # STR Modding: change audio language
