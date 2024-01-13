@@ -1,4 +1,4 @@
-#Game Version:
+# Game Version:
 
 1.1 USA (aka Greatest Hits version)
 
