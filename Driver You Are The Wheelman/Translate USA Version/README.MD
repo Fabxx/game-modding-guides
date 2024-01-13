@@ -49,13 +49,23 @@ now we need `JPSXDEC`: https://github.com/m35/jpsxdec
 
 open `jpsxdec` and click on `open or analyze file`
 
+![image](1.jpg)
+
 go into `NFMV` folder here you'll have folders from `0-7`.
 
 Select one of the `RENDERx.STR` files
 
+![image](2.jpg)
+
 now you'll have a little + sign, if you expand you can notice that you can select a video and the audio.
 
+![image](3.jpg)
+
 export the `video` only for the USA driver, and the `audio` only for the native language you want.
+
+you can select via this tiny little check box on the left:
+
+![image](4.jpg)
 
 Video must be `.avi`, audio must be `.wav`
 
