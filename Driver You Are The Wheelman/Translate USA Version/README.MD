@@ -23,7 +23,7 @@ NOTE: LANG.ENG can accept a bit longer strings, but not too much or you won't se
 
 # Change BYtes into BIN files
 
-you'll need a hex editor. The data is not encrypted so it's easy to see what string you have to change. Here's a sample:
+you'll need a hex editor. The data is not encrypted so it's easy to see what string you have to change.
 
 
 # STR Modding: change audio language
