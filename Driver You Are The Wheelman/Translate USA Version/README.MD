@@ -1,4 +1,4 @@
-# FIles to translate UI
+# Files to translate UI
 
 `FRONTEND.BIN` Contains menu text.
 
@@ -21,7 +21,7 @@ NOTE: LANG.ENG can accept a bit longer strings, but not too much or you won't se
 `NFMV` Video cutscenes with the audio. PAL version has `FMV` folder.
 
 
-# Change BYtes into BIN files
+# Hex Editing BIN files
 
 you'll need a hex editor. The data is not encrypted so it's easy to see what string you have to change.
 
@@ -132,3 +132,10 @@ THe first undercover cutscene to test with is `NFMV/0/RENDER2.STR`
 `input`
 
 `output`
+
+
+# ISO Rebuilding
+
+`mkpsxiso file.xml -o "Name of .iso"
+
+gives the generated xml file to mkpsxiso and will output to a PSX ISO, that you can test in the emulator.
