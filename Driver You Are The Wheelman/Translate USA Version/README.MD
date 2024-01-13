@@ -136,6 +136,6 @@ THe first undercover cutscene to test with is `NFMV/0/RENDER2.STR`
 
 # ISO Rebuilding
 
-`mkpsxiso file.xml -o "Name of .iso"
+`mkpsxiso file.xml -o "Name of .iso`
 
 gives the generated xml file to mkpsxiso and will output to a PSX ISO, that you can test in the emulator.
