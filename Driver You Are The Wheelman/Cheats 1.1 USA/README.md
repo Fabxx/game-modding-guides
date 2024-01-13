@@ -2,7 +2,7 @@
 
 1.1 USA (aka Greatest Hits version)
 
-#How to use
+# How to use
 
 put the `cht` file in `cheats` folder of duckstation
 
