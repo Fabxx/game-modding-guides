@@ -10,7 +10,7 @@ if you need less chars, you can remove the remaining bytes with spaces.
 
 `SOUND/VOICES.BLK` contains voices for the NPCs.
 
-`IVIEW.BIN` Contains "Undercover" menu strings.
+`IVIEW.BIN` Contains "Undercover" menu and subtitle strings.
 
 `MCCARD.BIN` Contains "Memory Card" save game strings
 
@@ -31,7 +31,8 @@ references to `MISSION.BLK` and you'll catch the extra string mentioned above.
 
 # Hex Editing BIN files
 
-you'll need a hex editor. The data is not encrypted so it's easy to see what string you have to change.
+you'll need a hex editor. I recommend `okteta` so you can find and replace duplicate strings faster. 
+The data is not encrypted so it's easy to see what string you have to change.
 
 Example:
 
