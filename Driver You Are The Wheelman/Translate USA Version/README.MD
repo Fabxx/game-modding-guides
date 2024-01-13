@@ -89,6 +89,23 @@ here's the basic command line:
 
 `PsxAvEnc.exe -t str2 -f 18900 -b 4 -c 2 -s 320x176 -I -r 30 -x 2 "input.avi" "output.str"`
 
+# Linux Script
+
+```
+# place your avi files in a folder called input.
+cd Input;
+
+for folder in *; do cd "$folder";
+
+for file in *.avi; do wine start "Z:\\\\path\\to\\AVI2STR\\PsxAvEnc.exe" -t str2 -f 18900 -b 4 -c 2 -s 320x176 -I -r 30 -x 2 "$file" "$file".str;
+
+done;
+
+cd ..;
+
+done
+```
+
 
 After converting the avi into STR, replace it where you got and test in game. 
 
