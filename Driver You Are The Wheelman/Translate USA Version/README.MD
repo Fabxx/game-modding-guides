@@ -44,7 +44,7 @@ Felony and extra damage hex bytes:
 ![image](felony_damage.jpg)
 
 
-NOTE: Here you can add more chars as long you have empty dots BEFORE another string
+NOTE: in some spaces you can add more chars, but only where two or more dots are available.
 
 The other menu text are in the same file, just search in the hex the corresponding chars you want to replace and you'll find them.
 
