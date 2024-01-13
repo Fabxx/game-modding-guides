@@ -31,11 +31,18 @@ Example:
 
 ![image](image.jpg)
 
-FOr damage, felony you can find these two addresses and replace them:
+# Felony, Damage and pause menu Text
 
-![image](felony and damage.jpg)
+in `SLUS_008.42`
+
+Damage hex bytes:
 
 ![image](damage.jpg)
+
+Felony and extra damage hex bytes:
+
+![image](felony_damage.jpg)
+
 
 NOTE: Felony can have one extra char, as long you don't go over "Damage"
 
