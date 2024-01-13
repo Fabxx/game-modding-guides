@@ -27,7 +27,7 @@ you'll need a hex editor. The data is not encrypted so it's easy to see what str
 
 Example:
 
-![image](image.png)
+![image](image.jpg)
 
 
 # STR Modding: change audio language
