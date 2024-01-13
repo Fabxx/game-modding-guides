@@ -1,6 +1,6 @@
 # Game Version:
 
-1.1 USA (aka Greatest Hits version)
+1.1 PSX USA (aka Greatest Hits version)
 
 # How to use
 
