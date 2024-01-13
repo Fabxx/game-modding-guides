@@ -2,7 +2,7 @@
 
 `FRONTEND.BIN` Contains menu text.
 
-NOTE: Strings must be the same lenghts or shorter. If you type too many bytes for a string the game will crash! usually the delimiter in each string is a the last dot. 
+NOTE: Strings must be the same lenght or shorter. If you type too many bytes for a string the game will crash! usually the delimiter in each string is a the last dot. 
 
 if you need less chars, you can remove the remaining bytes with spaces.
 
