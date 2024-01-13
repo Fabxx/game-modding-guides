@@ -23,6 +23,8 @@ NOTE: LANG.ENG can accept a bit longer strings, but not too much or you won't se
 `SLUS_008.42` Contains Damage, Felony, pause menu strings, "You've wrecked your car" and "you've lost the target" extra 
 strings.
 
+NOTE: strings in SLUS do NOT accept apostrophe ' char
+
 `MISSION.BLK` contains strings used in the missions, such as titles, failure/success missions. in `SLUS_008.42` find
 references to `MISSION.BLK` and you'll catch the extra string mentioned above.
 
