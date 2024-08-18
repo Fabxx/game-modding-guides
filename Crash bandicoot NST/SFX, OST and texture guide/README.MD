@@ -11,7 +11,7 @@ open the tool and in the settings, setup the tool with the path to your game dir
 
   -get the smallest file.pak in size since it will have very few file trees, `bumper_atvi.pak`
   
-  -rename it into `update.pak`
+  -make a copy of it, then rename it into `update.pak`
   
   -now, to replace a vanilla file with this method we override it, so you need to open the pak file
   that contains the file you want to replace, then once detected do this:
