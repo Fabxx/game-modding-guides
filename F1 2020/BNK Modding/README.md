@@ -89,6 +89,18 @@ from 2020 it does not contain my team music, carreer musics, showrooms.
 
 ```
 
+# 2020 music_cutscenes.bnk
+
+```
+02: loading music end (shared with music_persistent.bnk)
+```
+
+# 2020 music_track.bnk
+
+```
+05: loading music end (shared with music_persistent.bnk)
+```
+
 
 
 What you can do with the tool is to replace the WEMs, and test them in game.
