@@ -51,6 +51,15 @@ here is a list i've doucmented so far for the WEM files:
 from 2020 it does not contain my team music, carreer musics, showrooms.
 ```
 
+
+# 2018 music_persistent.bnk
+
+```
+08 is loading end music
+
+09 is loading music
+```
+
 # 2020 music_frontend.bnk
 
 
