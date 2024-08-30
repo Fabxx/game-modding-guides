@@ -236,6 +236,10 @@ To port the performance of classic cars into modern, you need all the parameters
 
 <GearBox>
 
+<FuelTank>
+
+<FuelECU>
+
 ```
 
 NOTE: Mercedes VTF file is inside `common.erp`
