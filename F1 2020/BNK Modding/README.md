@@ -22,9 +22,9 @@ with the tool open the music_frontend.bnk, this will give in the UI a list of we
 
 here is a list i've doucmented so far for the WEM files:
 
-```
-2018 music_frontend.bnk:
+ # 2018 music_frontend.bnk
 
+```
 01 is multiplayer menu music
 
 02 is driver career menu music
@@ -49,11 +49,12 @@ here is a list i've doucmented so far for the WEM files:
 
 
 from 2020 it does not contain my team music, carreer musics, showrooms.
+```
+
+# 2020 music_frontend.bnk
 
 
-
-2020 files music_frontend.bnk:
-
+```
 01: my team menu/driver career music
 
 02: main menu music
@@ -69,9 +70,11 @@ from 2020 it does not contain my team music, carreer musics, showrooms.
 17: title screen menu music
 
 20.wem: game options menu music
+```
 
-
-2020 music_persistent.bnk
+# 2020 music_persistent.bnk
+```
+01: loading music end
 
 03: loading music
 
@@ -92,14 +95,9 @@ https://github.com/eXpl0it3r/bnkextr
 with both you can extract the WEM files
 
 
-# WEM to WAV conversion (and viceversa) PENDING
-
 # WEM to OGG conversion
 
 use this tool: https://github.com/WolvenKit/wwise-audio-tools 
 
-
-
-# Notes
-
-the bnks can be edited with the first tool, no need to necessarily convert the files to WAV or OGG, though it can be helpful to understand which audio file it is before replacing.
+simply darg & drop the WEM files into the folder where the tool is and run the tool. now you can listen to the WEMs to understand
+what audio they have.
