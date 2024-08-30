@@ -240,6 +240,9 @@ To port the performance of classic cars into modern, you need all the parameters
 
 NOTE: Mercedes VTF file is inside `common.erp`
 
+NOTE 2: if on force india file the vtf gives a "premature end of stream" error, use Ego ERP Archiver 8.0.1. 
+         for other files 9.0 should work fine
+
 save and import again the modern car xml file edited.
           
           
