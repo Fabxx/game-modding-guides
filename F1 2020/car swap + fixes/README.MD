@@ -236,21 +236,7 @@ To port the performance of classic cars into modern, you need all the parameters
 
 ```
 
--FRICTION PARAMETERS
-
-```
-
-```
-
--REVS ONLY PARAMETERS
-```
-<MaxLimiterRateFactor value="1" />
-<IdleRotationRate value="523.598755" />
-<LimiterRotationRate value="1780.23584" />
-```
-
-`LimiterRotationRate`: max revs of the engine
-`IdleRotationRate`: min revs of the engine
+NOTE: Mercedes VTF file is inside `common.erp`
 
 save and import again the modern car xml file edited.
           
