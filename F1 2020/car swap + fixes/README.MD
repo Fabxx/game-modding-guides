@@ -208,33 +208,40 @@ NOTE 2: If you changed the revs only but the engine is too weak still, paste thi
 the revs power spline as well (not actually this one, this is just an example 
 of what it looks in your xml)
 
+To port the performance of classic cars into modern, you need all the parameters from these sections:
+
 ```
-<RevsPowerSpline numVertices="21">
-      <SplineElement x="0" y="0" op="=" />
-      <SplineElement x="130.718124" y="14816.3564453125" op="=" />
-      <SplineElement x="209.439509" y="37402.24609375" op="=" />
-      <SplineElement x="317.719727" y="66444.2421875" op="=" />
-      <SplineElement x="417.6772" y="92008.3984375" op="=" />
-      <SplineElement x="523.598775" y="119007.15625" op="=" />
-      <SplineElement x="637.603638" y="151844.828125" op="=" />
-      <SplineElement x="733.038285" y="181910.9375" op="=" />
-      <SplineElement x="839.615051" y="220629.453125" op="=" />
-      <SplineElement x="942.477795" y="260115.65625" op="=" />
-      <SplineElement x="1049.05457" y="305136.4375" op="=" />
-      <SplineElement x="1151.91730" y="350646.0625" op="=" />
-      <SplineElement x="1258.49414" y="397953.53125" op="=" />
-      <SplineElement x="1361.35681" y="438626.375" op="=" />
-      <SplineElement x="1466.07657" y="476028.625" op="=" />
-      <SplineElement x="1518.43644" y="494729.71875" op="=" />
-      <SplineElement x="1570.79632" y="510030.65625" op="=" />
-      <SplineElement x="1675.51607" y="537232.25" op="=" />
-      <SplineElement x="1727.87596" y="540632.5" op="=" />
-      <SplineElement x="1780.23584" y="540631.5" op="=" />
-      <SplineElement x="1832.596" y="370035.90625" op="=" />
-    </RevsPowerSpline>
+<RevsPowerSpline numVertices="xx">
+</RevsPowerSpline>
+
+<RevsFrictionSpline>
+
+<RevsEngineBrakingSpline>
+
+<RevsTurboLagSpline> (if different from vanilla)
+
+<Mass>
+
+<Inertia>
+
+<MinIdleRateFactor>
+
+<MaxLimiterRateFactor>
+
+<IdleRotationRate>
+
+<LimiterRotationRate>
+
+<TurboMode>
+
 ```
-    
-    
+
+-FRICTION PARAMETERS
+
+```
+
+```
+
 -REVS ONLY PARAMETERS
 ```
 <MaxLimiterRateFactor value="1" />
