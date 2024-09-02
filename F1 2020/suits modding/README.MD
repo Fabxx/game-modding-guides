@@ -43,6 +43,8 @@ NOTE: DO NOT REPLACE THE SUIT ON FOM01, CAUSES MIPMAP CONFLICTS IF YOU REPLACED 
 
 -> 1990-PROST
 
+-> FOM01 (contains 70 years edition suit)
+
 unlike the helmet you can replace multiple suits.
 
 
