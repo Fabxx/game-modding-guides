@@ -44,3 +44,13 @@ NOTE: DO NOT REPLACE THE SUIT ON FOM01, CAUSES MIPMAP CONFLICTS IF YOU REPLACED 
 -> 1990-PROST
 
 unlike the helmet you can replace multiple suits.
+
+
+As for the drivers, the textures are duplicated in two files:
+
+driver_name.erp
+driver_name_helmet.erp
+
+for each driver you will need to replace all the listed textures for both files.
+
+ALso both contain the helmet textures so if you also want to change the helmet of the driver, you'll need to do the same.
