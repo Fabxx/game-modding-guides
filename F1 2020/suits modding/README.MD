@@ -1,4 +1,4 @@
-# SUIT LOCATION (Player model FOM01)
+# SUIT LOCATION (Player model FOM01/Default team suits applied over player character)
 
 `2020_asset_groups/character_package/team_livery/`
 
