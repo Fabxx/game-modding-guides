@@ -1,6 +1,10 @@
-# SUIT LOCATION
+# SUIT LOCATION (Player model FOM01)
 
 `2020_asset_groups/character_package/team_livery/`
+
+# SUIT LOCATION (Drivers)
+
+`2020_asset_groups/character_package/drivers/male`
 
 open the ERP file of one of the list below
 
