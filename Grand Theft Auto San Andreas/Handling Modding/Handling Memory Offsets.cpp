@@ -1,6 +1,3 @@
-// NOTE: Floats should always start with padding of 4 bytes in memory. A sequence of floats would always be 0x0, 0x4, 0x8, 0xc and so on.
-// TODO: add vehicle flags before thandlingData
-
 struct PLUGIN_API tHandlingData { 
     int           m_nVehicleId; 0x384                           - 0x0
     float         m_fMass; 0x388                                - 0x4
@@ -110,7 +107,7 @@ struct PLUGIN_API tHandlingData {
 
 VALIDATE_SIZE(tHandlingData, 0xE0);
 
-// NOTE: In game memory you need the offset starting from the struct, not the beginning of the class.
+
 class PLUGIN_API cTransmission {
 public:
     tTransmissionGear m_aGears[6]; 0x3B0               - 0x2C // 6 structs of 3 floats. 1 float = 4 bytes so 4 x 3 = 12. 12 x 6 = 72 -> 0x48
