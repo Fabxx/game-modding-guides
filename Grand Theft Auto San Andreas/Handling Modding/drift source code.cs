@@ -92,7 +92,78 @@ while true
             continue
         end
 
-        APPLY_HANDLING(my_handling, vanilla_handling, vanilla_drive_type, car_pointer)
+        int val_int
+        float val
+
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "MASS"
+        Memory.WriteWithOffset(my_handling, m_fMass, PTR_SIZE, val)
+
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "T_MASS"
+        Memory.WriteWithOffset(my_handling, m_fTurnMass, PTR_SIZE, val)
+
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "DRAG_MULT"
+        Memory.WriteWithOffset(my_handling, m_fDragMult, PTR_SIZE, val)
+
+        // x, y, z  -1.0 to 50000.0
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "VEC_X"
+        Memory.WriteWithOffset(my_handling, m_vecCentreOfMass_x, PTR_SIZE, val)
+
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "VEC_Y"
+        Memory.WriteWithOffset(my_handling, m_vecCentreOfMass_y, PTR_SIZE, val)
+
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "VEC_Z"
+        Memory.WriteWithOffset(my_handling, m_vecCentreOfMass_z, PTR_SIZE, val)
+
+        //m_fTractionMultiplier - turn slower/faster
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "T_MULT"
+        Memory.WriteWithOffset(my_handling, m_fTractionMultiplier, PTR_SIZE, val)
+
+        //m_fTractionLoss - the lower, the more grip you lose while steeering
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "T_LOSS"
+        Memory.WriteWithOffset(my_handling, m_fTractionLoss, PTR_SIZE, val)
+
+        //m_fTractionBias - Move the grip towards the front or rear. Higher the value, faster the steering.
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "T_BIAS"
+        Memory.WriteWithOffset(my_handling, m_fTractionBias, PTR_SIZE, val)
+
+        //m_transmissionData->m_ndriveType - values accepted: F: 70, R: 82, 4: 52 - Unsigned char, size 1
+        // type 4 gives more grip and turns faster.
+        // Takes effect only if edited on the global shared pointer 0x384! Making backup to restore it there too.
+        Memory.ReadWithOffset(vanilla_handling, m_transmissionData_m_ndriveType, UCHAR_SIZE, vanilla_drive_type)
+
+        val_int = read_int_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "DRIVE_TYPE"
+        Memory.WriteWithOffset(vanilla_handling, m_transmissionData_m_ndriveType, UCHAR_SIZE, val_int)
+
+        //m_transmissionData->m_nEngineType - values accepted: P: 80, D: 68, E: 69
+        val_int = read_int_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "ENGINE_TYPE"
+        Memory.WriteWithOffset(my_handling, m_transmissionData_m_nengineType, UCHAR_SIZE, val_int)
+
+        //m_transmissionData->m_fEngineAcceleration
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "ENGINE_ACCEL"
+        Memory.WriteWithOffset(my_handling, m_transmissionData_m_fengineAcceleration, PTR_SIZE, val)
+
+        //m_transmissionData->m_nNumberOfGears - unsigned char from 1 to 6
+        val_int = read_int_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "N_GEARS"
+        Memory.WriteWithOffset(my_handling, m_transmissionData_m_nNumberOfGears, UCHAR_SIZE, val_int)
+
+        //m_fBrakeDeceleration, 0.1 to 10.0
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "BRAKE_DECEL"
+        Memory.WriteWithOffset(my_handling, m_fBrakeDeceleration, PTR_SIZE, val)
+
+        //m_fBrakeBias, 0.0 > x > 1.0 a value between this range
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "BRAKE_BIAS"
+        Memory.WriteWithOffset(my_handling, m_fBrakeBias, PTR_SIZE, val)
+
+        //m_bABS, 0 or 1, unsigned char 1 byte
+        val_int = read_int_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "ABS"
+        Memory.WriteWithOffset(my_handling, m_bABS, UCHAR_SIZE, val_int)
+
+        //m_fSteeringLock
+        val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "STEER_ANGLE"
+        Memory.WriteWithOffset(my_handling, m_fSteeringLock, PTR_SIZE, val)
+
+        // Change default vehicle tHandlingData pointer to your custom pointer.
+        Memory.WriteWithOffset(car_pointer, PTR_HANDLING_DATA, PTR_SIZE, my_handling)
         drift_applied = 1
         prev_car_handle = car_handle
         trace "DRIFT ON"
@@ -102,7 +173,8 @@ while true
         Pad.IsKeyPressed(key_2)
         drift_applied == 1
     then
-        RESET(car_pointer, vanilla_handling, vanilla_drive_type)
+        Memory.WriteWithOffset(vanilla_handling, m_transmissionData_m_ndriveType, UCHAR_SIZE, vanilla_drive_type)
+        Memory.WriteWithOffset(car_pointer, PTR_HANDLING_DATA, PTR_SIZE, vanilla_handling)
         drift_applied = 0
         trace "DRIFT OFF"
     end
@@ -112,7 +184,8 @@ while true
         Pad.IsButtonPressed(0, drift_pad_2)
         drift_applied == 1
     then
-        RESET(car_pointer, vanilla_handling, vanilla_drive_type)
+        Memory.WriteWithOffset(vanilla_handling, m_transmissionData_m_ndriveType, UCHAR_SIZE, vanilla_drive_type)
+        Memory.WriteWithOffset(car_pointer, PTR_HANDLING_DATA, PTR_SIZE, vanilla_handling)
         drift_applied = 0
         trace "DRIFT OFF"
     end
@@ -168,83 +241,4 @@ function TRACE_HANDLING(handling: int)
 
     Memory.ReadWithOffset(handling, m_fSteeringLock, PTR_SIZE, val)
     trace "m_fSteeringLock: %f" val
-end
-
-function APPLY_HANDLING(my_handling: int, vanilla_handling: int, vanilla_drive_type: int, car_pointer: int)
-    int val_int
-    float val
-
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "MASS"
-    Memory.WriteWithOffset(my_handling, m_fMass, PTR_SIZE, val)
-
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "T_MASS"
-    Memory.WriteWithOffset(my_handling, m_fTurnMass, PTR_SIZE, val)
-
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "DRAG_MULT"
-    Memory.WriteWithOffset(my_handling, m_fDragMult, PTR_SIZE, val)
-
-    // x, y, z  -1.0 to 50000.0
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "VEC_X"
-    Memory.WriteWithOffset(my_handling, m_vecCentreOfMass_x, PTR_SIZE, val)
-
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "VEC_Y"
-    Memory.WriteWithOffset(my_handling, m_vecCentreOfMass_y, PTR_SIZE, val)
-
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "VEC_Z"
-    Memory.WriteWithOffset(my_handling, m_vecCentreOfMass_z, PTR_SIZE, val)
-
-    //m_fTractionMultiplier - turn slower/faster
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "T_MULT"
-    Memory.WriteWithOffset(my_handling, m_fTractionMultiplier, PTR_SIZE, val)
-
-    //m_fTractionLoss - the lower, the more grip you lose while steeering
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "T_LOSS"
-    Memory.WriteWithOffset(my_handling, m_fTractionLoss, PTR_SIZE, val)
-
-    //m_fTractionBias - Move the grip towards the front or rear. Higher the value, faster the steering.
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "T_BIAS"
-    Memory.WriteWithOffset(my_handling, m_fTractionBias, PTR_SIZE, val)
-
-    //m_transmissionData->m_ndriveType - values accepted: F: 70, R: 82, 4: 52 - Unsigned char, size 1
-    // type 4 gives more grip and turns faster.
-    // Takes effect only if edited on the global shared pointer 0x384! Making backup to restore it there too.
-    Memory.ReadWithOffset(vanilla_handling, m_transmissionData_m_ndriveType, UCHAR_SIZE, vanilla_drive_type)
-
-    val_int = read_int_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "DRIVE_TYPE"
-    Memory.WriteWithOffset(vanilla_handling, m_transmissionData_m_ndriveType, UCHAR_SIZE, val_int)
-
-    //m_transmissionData->m_nEngineType - values accepted: P: 80, D: 68, E: 69
-    val_int = read_int_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "ENGINE_TYPE"
-    Memory.WriteWithOffset(my_handling, m_transmissionData_m_nengineType, UCHAR_SIZE, val_int)
-
-    //m_transmissionData->m_fEngineAcceleration
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "ENGINE_ACCEL"
-    Memory.WriteWithOffset(my_handling, m_transmissionData_m_fengineAcceleration, PTR_SIZE, val)
-
-    //m_transmissionData->m_nNumberOfGears - unsigned char from 1 to 6
-    val_int = read_int_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "N_GEARS"
-    Memory.WriteWithOffset(my_handling, m_transmissionData_m_nNumberOfGears, UCHAR_SIZE, val_int)
-
-    //m_fBrakeDeceleration, 0.1 to 10.0
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "BRAKE_DECEL"
-    Memory.WriteWithOffset(my_handling, m_fBrakeDeceleration, PTR_SIZE, val)
-
-    //m_fBrakeBias, 0.0 > x > 1.0 a value between this range
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "BRAKE_BIAS"
-    Memory.WriteWithOffset(my_handling, m_fBrakeBias, PTR_SIZE, val)
-
-    //m_bABS, 0 or 1, unsigned char 1 byte
-    val_int = read_int_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "ABS"
-    Memory.WriteWithOffset(my_handling, m_bABS, UCHAR_SIZE, val_int)
-
-    //m_fSteeringLock
-    val = read_float_from_ini_file {path} "cleo\handling.ini" {section} "HANDLING" {key} "STEER_ANGLE"
-    Memory.WriteWithOffset(my_handling, m_fSteeringLock, PTR_SIZE, val)
-
-    // Change default vehicle tHandlingData pointer to your custom pointer.
-    Memory.WriteWithOffset(car_pointer, PTR_HANDLING_DATA, PTR_SIZE, my_handling)
-end
-
-function RESET(car_pointer: int, vanilla_handling: int, vanilla_drive_type: int)
-    Memory.WriteWithOffset(car_pointer, PTR_HANDLING_DATA, PTR_SIZE, vanilla_handling)
 end
