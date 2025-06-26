@@ -34,3 +34,14 @@ the maximum speed, but also increases the horsepower of the engine.
 - `Turn Mass`: Weight while turning
   - If changed, they reduce the engine braking of the vehicle.
   - You don't lose speed when cornering even if you let go of the accelerator
+
+- `m_vecCentreOfMass.xyz`: 3D vector that controls the movement of the vehicle's weight:
+  - x = left or right
+  - y = forward or backward
+  - z = up and down in rotation.
+
+To drift, move the Y mass to the front with positive values. The Z mass to a slightly negative value to point down. The X axis remains unchanged.
+
+the front wheels will be glued to the ground, and the rear ones do not touch the back to angle the vehicle. The decimal value represents 10% of the base. So 0.1 = 10%, 0.2 = 20% and so on.
+
+The percentage is calculated from the `Mass` value, so if I use 01., it moves 10% of the vehicle's Mass to the front
