@@ -68,10 +68,13 @@ while true
     Char.StoreCarIsInNoSave($scplayer, car_handle)
 
     /* If vehicle has changed, apply handling on new struct when key is pressed.
+       Restore drive type on global pointer if vehicle changes.
     */
-    if
+    if and
         car_handle <> prev_car_handle
+        car_pointer <> prev_car_pointer
     then
+        Memory.WriteWithOffset(vanilla_handling, m_transmissionData_m_ndriveType, UCHAR_SIZE, vanilla_drive_type)
         drift_applied = 0
     end
 
