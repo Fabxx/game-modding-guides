@@ -21,9 +21,7 @@ int vanilla_handling = 0, my_handling = 0, vanilla_drive_type = 0, drift_applied
 int reset_enabled = 0
 
 int key_1 = read_int_from_ini_file {path} "cleo\handling.ini" {section} "KEYS" {key} "KB_1"
-int key_2 = read_int_from_ini_file {path} "cleo\handling.ini" {section} "KEYS" {key} "KB_2"
 int drift_pad_1 = read_int_from_ini_file {path} "cleo\handling.ini" {section} "KEYS" {key} "JOYPAD_1"
-int drift_pad_2 = read_int_from_ini_file {path} "cleo\handling.ini" {section} "KEYS" {key} "JOYPAD_2"
 
 // Offset Documentation if you want to add more params: https://shorturl.at/7sU8i
 
@@ -169,28 +167,16 @@ while true
         Memory.WriteWithOffset(car_pointer, PTR_HANDLING_DATA, PTR_SIZE, my_handling)
         drift_applied = 1
         prev_car_handle = car_handle
-        trace "DRIFT ON"
     end
 
     if and
-        Pad.IsKeyPressed(key_2)
+        not Pad.IsKeyPressed(key_1)
+        not Pad.IsButtonPressed(0, drift_pad_1)
         drift_applied == 1
     then
         Memory.WriteWithOffset(vanilla_handling, m_transmissionData_m_ndriveType, UCHAR_SIZE, vanilla_drive_type)
         Memory.WriteWithOffset(car_pointer, PTR_HANDLING_DATA, PTR_SIZE, vanilla_handling)
         drift_applied = 0
-        trace "DRIFT OFF"
-    end
-
-    // same condition but for gamepad.
-    if and
-        Pad.IsButtonPressed(0, drift_pad_2)
-        drift_applied == 1
-    then
-        Memory.WriteWithOffset(vanilla_handling, m_transmissionData_m_ndriveType, UCHAR_SIZE, vanilla_drive_type)
-        Memory.WriteWithOffset(car_pointer, PTR_HANDLING_DATA, PTR_SIZE, vanilla_handling)
-        drift_applied = 0
-        trace "DRIFT OFF"
     end
 end
 
