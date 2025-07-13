@@ -41,7 +41,7 @@
 	- `interior ID`: in which interior the object is used.
 	- `XYZ Position`: 3D Vector which represents in game coordinates of map position
 	- `XYZW Rotation`:  4D Vector which represents in game coordinates of map rotation
-	-`LOD`: Level of detail to start from. -1 is `NO LOD` 1 is `USE LOD`
+	- `LOD`: Level of detail to start from. -1 is `NO LOD` 1 is `USE LOD`
 	
 
 # IMPORT
