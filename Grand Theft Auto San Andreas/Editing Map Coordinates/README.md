@@ -99,5 +99,8 @@
 
 
 
+# ID Ranges
 
+- Single Player: `0 - 20000`, usable IDs start from 18632
+- SA-MP: Free IDs range is `15065 - 15999`
 
