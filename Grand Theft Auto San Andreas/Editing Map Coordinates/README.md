@@ -9,7 +9,7 @@
 
 - First, check if your map is using vanilla DFFs from the game
   - If so, use `IMG Factory` to export the DFFs from `gta3.img` and `gta_ing.img`
-  - Open the IPL file of the map, and search the DFFs inside the imgs with the names provided by the IPL.
+  - You can open the IPL file of the map, and search the DFFs inside the imgs with the names provided by the IPL.
     Example:
 	
 	```
@@ -42,13 +42,15 @@
 	- `XYZ Position`: 3D Vector which represents in game coordinates of map position
 	- `XYZW Rotation`:  4D Vector which represents in game coordinates of map rotation
 	- `LOD`: Level of detail to start from. -1 is `NO LOD` 1 is `USE LOD`
+	  - NOTE: If objects in the IPL have a flag different from -1 but you want to discard the LOD to spare some IDs, you can override the flag to -1
+              and then delete the dff of LODs
 	
 
 # IMPORT
 
-- First of all, if your map is using vanilla objects, you need to add those strings to the `IDE` definitions.
-  - Use `grepWin` to recurisvely search for the object name inside the IDE files.
-  - Once found, add the object definitions to the map's `IDE` file and save it
+- If your map is using vanilla objects, you need to add those strings to the `IDE` definitions of the map mod.
+  - Use `grepWin` on gta sa directory to recurisvely search for the object name inside the IDE files.
+  - Once found, copy the lines into the map's `IDE` file and save it.
 
 - Open 3DS Max, on the `top-Right` you should see a section called `GTA Tools`
 
@@ -65,6 +67,8 @@
 # Editing Map Coordinates
 
 - Select all the meshes with `CTRL+A`
+- On far right of the UI, click `Pivot` -> `Affect Pivot Only`
+- 
 
 - Click on the move icon, which is a cross composed of 4 arrows
 
@@ -105,4 +109,5 @@
 - SA-MP: Free IDs range is `15065 - 15999`
 
 NOTE: Fastman limit adjuster can increase the ID limit over 20000, but only for single player, on SA-MP this modifications crashes.
+
 
